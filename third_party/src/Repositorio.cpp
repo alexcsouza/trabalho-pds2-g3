@@ -64,7 +64,7 @@ void Repositorio<Entidade>::salvar(Entidade* entidade){
 //    }
 //    saida.close();
 //}
-template<class Entidade>
+
 int Repositorio<Entidade>::getProximoId(){
     return ++Repositorio<Entidade>::proximoId;
 }

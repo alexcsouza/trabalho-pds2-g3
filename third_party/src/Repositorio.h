@@ -10,8 +10,8 @@ struct entidade_comparator {
     }
 };
 
-template <class T = Entidade>
-class Repositorio {
+template <class T>
+class Repositorio  {
     private:
         std::vector<T, entidade_comparator> lista;
         static int proximoId;
@@ -23,7 +23,6 @@ class Repositorio {
         virtual void salvar(T* obj) = 0;
         virtual void salvarArquivo() = 0;
         virtual int getProximoId() = 0;
-        
         
 };
 
