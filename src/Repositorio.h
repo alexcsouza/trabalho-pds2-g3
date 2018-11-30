@@ -14,7 +14,7 @@ template <class T = Entidade>
 class Repositorio {
     private:
         std::vector<T, entidade_comparator> lista;
-        static int proximoId;
+        
     public:
         Repositorio();
         virtual void carregarDados(T* entidade) = 0;

@@ -2,16 +2,16 @@
 #include <iostream>
 #include <vector>
 
-#include "Repositorio.h"
-#include "Entidade.h"
+#include "../Repositorio.h"
+#include "Usuario.h"
 
-template<class Entidade>
-Repositorio<Entidade>::Repositorio() {
+template<class Usuario>
+Repositorio<Usuario>::Repositorio() {
 
 }
-
-template<class Entidade>
-void Repositorio<Entidade>::carregarDados(Entidade* entidade){
+/*
+template<class Usuario>
+void Repositorio<Usuario>::carregarDados(Usuario* entidade){
     std::string nomeDoArquivo = "data/" + entidade->getNomeDoArquivo();
     std::ifstream entrada(nomeDoArquivo);
     std::string linha;
@@ -21,14 +21,14 @@ void Repositorio<Entidade>::carregarDados(Entidade* entidade){
         this->lista.push_back(linha);
     }
     
-    Repositorio<Entidade>::proximoId = lista.at(lista.size()-1).getId();
+    Repositorio<Usuario>::proximoId = lista.at(lista.size()-1).getId();
     
     entrada.close();
 }
 
-template<class Entidade>
-Entidade* Repositorio<Entidade>::get(int id){
-    for(Entidade* entidade: this->lista){
+template<class Usuario>
+Usuario* Repositorio<Usuario>::get(int id){
+    for(Usuario* entidade: this->lista){
         if(entidade->getId() == id){
             return entidade;
         }
@@ -36,39 +36,38 @@ Entidade* Repositorio<Entidade>::get(int id){
     return NULL;
 }
 
-template<class Entidade>
-std::vector<Entidade*, entidade_comparator> Repositorio<Entidade>::getLista(){
+template<class Usuario>
+std::vector<Usuario*, entidade_comparator> Repositorio<Usuario>::getLista(){
     return this->lista;
 }
 
-template<class Entidade>
-void Repositorio<Entidade>::salvar(Entidade* entidade){
+template<class Usuario>
+void Repositorio<Usuario>::salvar(Usuario* entidade){
     std::ofstream saida(("data/" << entidade->getNomeDoArquivo()));
     std::string linha;
     for(int i = 0; i < this->lista; i++){
-        Entidade entidade = this->lista.at(i);
+        Usuario entidade = this->lista.at(i);
         linha = entidade.gerarLinhaDeDados();
         saida << linha;
     }
     saida.close();
 }
 
-//template<class Entidade>
-//void Repositorio<Entidade>::salvar(Entidade* entidade){
+//template<class Usuario>
+//void Repositorio<Usuario>::salvar(Usuario* entidade){
 //    std::ofstream saida(("data/" << entidade->getNomeDoArquivo()));
 //    std::string linha;
 //    for(int i = 0; i < this->lista; i++){
-//        Entidade entidade = this->lista.at(i);
+//        Usuario entidade = this->lista.at(i);
 //        linha = entidade->gerarLinhaDeDados();
 //        saida->write(linha);
 //    }
 //    saida.close();
 //}
-
-int Repositorio<Entidade>::getProximoId(){
-    return ++Repositorio<Entidade>::proximoId;
+template<class Usuario>
+int Repositorio<Usuario>::getProximoId(){
+    return ++Repositorio<Usuario>::proximoId;
 }
-
-
+ */
 
 
